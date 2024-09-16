@@ -177,3 +177,16 @@
             type="search" placeholder="Pencarian pelatihan kursus...">
     </div> --}}
 </div>
+
+<script>
+    const navbar = document.getElementById('navbar');
+
+    // Scroll effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            navbar.classList.add('border-b', 'border-slate-200', 'shadow-md');
+        } else {
+            navbar.classList.remove('border-b', 'border-slate-200', 'shadow-md');
+        }
+    });
+</script>

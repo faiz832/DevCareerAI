@@ -13,29 +13,24 @@
 
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        /* Hide scrollbar in Chrome, Safari and Opera */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased">
     @include('layouts.navbar')
-    <div class="h-[500px] bg-blue-400">
+    <div class="h-[5500px] bg-blue-400">
         <div class="max-w-[1200px] mx-auto">
             <div class="flex items-center justify-center h-24">
                 <h1 class="text-black text-3xl">Home page</h1>
             </div>
         </div>
     </div>
-    <script>
-        const navbar = document.getElementById('navbar');
-
-        // Scroll effect
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 0) {
-                navbar.classList.add('border-b', 'border-slate-200', 'shadow-md');
-            } else {
-                navbar.classList.remove('border-b', 'border-slate-200', 'shadow-md');
-            }
-        });
-    </script>
 </body>
 
 </html>
