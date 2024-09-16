@@ -70,10 +70,12 @@
             class="hidden md:flex w-3/6 bg-gradient-to-br from-blue-700 to-blue-400 p-12 items-center justify-center relative overflow-hidden">
 
             <!-- Content container with backdrop-filter for blur effect -->
-            <div class="relative z-10 bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded px-12 py-24">
+            <div
+                class="relative z-10 bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded p-12 lg:px-12 lg:py-24">
                 <div class="text-white max-w-lg">
-                    <h1 class="text-6xl font-bold mb-8">Digital platform for distance learning.</h1>
-                    <p class="text-lg w-3/4">Experience seamless online education with our cutting-edge platform.</p>
+                    <h1 class="text-4xl lg:text-6xl font-bold mb-8">Digital platform for distance learning.</h1>
+                    <p class="text-sm lg:text-lg w-3/4">Experience seamless online education with our cutting-edge
+                        platform.</p>
                 </div>
             </div>
         </div>
