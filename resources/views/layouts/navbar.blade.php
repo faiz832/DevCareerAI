@@ -3,8 +3,8 @@
     class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 bg-white supports-backdrop-blur:bg-white/60">
     <!-- Primary Navigation Menu -->
     <div class="flex items-center h-[70px]">
-        <div class="w-[1200px] relative flex items-center mx-auto p-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-4">
+        <div class="w-[1200px] relative flex items-center mx-auto p-4 py-6 lg:py-8">
+            <div class="flex items-center gap-4 md:gap-0">
                 <div class="flex items-center h-full">
                     <div class="relative" x-data="{ open: false }" @click.away="open = false">
                         <!-- Menu Button (visible on md and smaller screens) -->

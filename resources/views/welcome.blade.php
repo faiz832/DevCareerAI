@@ -24,13 +24,14 @@
 
 <body class="font-sans antialiased">
     @include('layouts.navbar')
-    <div class="h-[5500px] bg-blue-400">
+    <div class="h-[500px] bg-blue-400">
         <div class="max-w-[1200px] mx-auto">
             <div class="flex items-center justify-center h-24">
-                <h1 class="text-black text-3xl">Home page</h1>
             </div>
         </div>
     </div>
+
+    @include('layouts.footer')
 </body>
 
 </html>
