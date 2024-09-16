@@ -17,7 +17,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen bg-gray-100">
         @include('layouts.navbar')
 
         <!-- Page Heading -->
@@ -33,6 +33,7 @@
         <main>
             {{ $slot }}
         </main>
+        @include('layouts.footer')
     </div>
 </body>
 
