@@ -76,10 +76,21 @@
         <!-- Right side - Login form -->
         <div class="w-4/6 bg-white p-16 flex items-center">
             <div class="w-full max-w-md">
-                <i class="fa fa-chevron-left me-2">Home</i>
+                <a href="{{ url('/') }}" class="flex items-center w-max -ml-1.5">
+                    <svg class="w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        transform="rotate(270)">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M6 15L12 9L18 15" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                    <span class="text-xl text-blue-500">Home</span>
+                </a>
 
                 <div class="mb-8">
-                    <h2 class="mt-4 text-4xl font-semibold">Log In</h2>
+                    <h2 class="mt-4 text-4xl font-bold">Log In</h2>
                     <p class="mt-2 text-gray-600">Hey, Welcome Back!</p>
                 </div>
 
