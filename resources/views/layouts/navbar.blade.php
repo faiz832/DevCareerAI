@@ -40,7 +40,7 @@
                 </div>
 
                 <!-- Brand Name -->
-                <a href="{{ url('/') }}" class="text-2xl font-bold">DevCareer AI</a>
+                <a href="{{ url('/') }}" class="text-2xl font-semibold">DevCareer AI</a>
             </div>
 
             <!-- Search Input (visible on larger screens) -->
@@ -54,8 +54,10 @@
 
             <!-- Desktop Navigation (hidden on md and smaller screens) -->
             <div class="hidden md:flex gap-4 lg:gap-8 mx-4">
-                <a href="" class="font-bold hover:text-blue-500 transition duration-300 ease-in-out">Course</a>
-                <a href="" class="font-bold hover:text-blue-500 transition duration-300 ease-in-out">Resume</a>
+                <a href=""
+                    class="font-semibold hover:text-blue-500 transition duration-300 ease-in-out">Course</a>
+                <a href=""
+                    class="font-semibold hover:text-blue-500 transition duration-300 ease-in-out">Resume</a>
             </div>
 
             <!-- Search and Login Buttons -->
@@ -95,7 +97,7 @@
                                         {{-- <img src="{{ Auth::user()->profile_photo_url }}" alt=""> --}}
                                     </div>
                                     <div class="hidden md:flex items-center">
-                                        <span class="flex items-center font-bold text-sm uppercase ms-2">
+                                        <span class="flex items-center font-semibold text-sm uppercase ms-2">
                                             {{ Auth::user()->name }}
                                             <svg class="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -142,7 +144,7 @@
                             </div>
                         @else
                             <a href="{{ route('login') }}"
-                                class="rounded-full md:rounded bg-blue-500 md:bg-white hover:bg-blue-500 border border-blue-500 p-2 md:py-2 md:px-4 font-bold text-blue-500 hover:text-white text-center transition duration-300 ease-in-out">
+                                class="rounded-full md:rounded bg-blue-500 md:bg-white hover:bg-blue-500 border border-blue-500 p-2 md:py-2 md:px-4 font-semibold text-blue-500 hover:text-white text-center transition duration-300 ease-in-out">
                                 <span class="hidden md:inline">Login</span>
                                 <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 md:hidden"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -158,7 +160,7 @@
 
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}"
-                                    class="hidden md:inline rounded bg-blue-500 hover:bg-blue-700 border border-blue-500 hover:border-blue-700 py-2 px-4 font-bold text-white text-center transition duration-300 ease-in-out">
+                                    class="hidden md:inline rounded bg-blue-500 hover:bg-blue-700 border border-blue-500 hover:border-blue-700 py-2 px-4 font-semibold text-white text-center transition duration-300 ease-in-out">
                                     Register
                                 </a>
                             @endif
