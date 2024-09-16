@@ -66,7 +66,7 @@
 <body>
     <div class="flex h-screen bg-gray-100">
         <!-- Left side - Digital platform content -->
-        <div class="w-3/6 bg-gradient-to-br from-blue-400 to-purple-500 p-12 flex items-center justify-center">
+        <div class="w-3/6 bg-gradient-to-br from-blue-700 to-blue-400 p-12 flex items-center justify-center">
             <div class="text-white max-w-lg">
                 <h1 class="text-4xl font-bold mb-4">Digital platform for distance learning.</h1>
                 <p class="text-xl">Experience seamless online education with our cutting-edge platform.</p>
