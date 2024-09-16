@@ -66,15 +66,20 @@
 <body>
     <div class="flex h-screen bg-gray-100">
         <!-- Left side - Digital platform content -->
-        <div class="w-3/6 bg-gradient-to-br from-blue-700 to-blue-400 p-12 flex items-center justify-center">
-            <div class="text-white max-w-lg">
-                <h1 class="text-4xl font-bold mb-4">Digital platform for distance learning.</h1>
-                <p class="text-xl">Experience seamless online education with our cutting-edge platform.</p>
+        <div
+            class="hidden md:flex w-3/6 bg-gradient-to-br from-blue-700 to-blue-400 p-12 items-center justify-center relative overflow-hidden">
+
+            <!-- Content container with backdrop-filter for blur effect -->
+            <div class="relative z-10 bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded px-12 py-24">
+                <div class="text-white max-w-lg">
+                    <h1 class="text-6xl font-bold mb-8">Digital platform for distance learning.</h1>
+                    <p class="text-lg w-3/4">Experience seamless online education with our cutting-edge platform.</p>
+                </div>
             </div>
         </div>
 
         <!-- Right side - Login form -->
-        <div class="w-4/6 bg-white p-16 flex items-center">
+        <div class="w-full md:w-4/6 bg-white p-16 flex items-center justify-center md:justify-start">
             <div class="w-full max-w-md">
                 <a href="{{ url('/') }}" class="flex items-center w-max -ml-1.5">
                     <svg class="w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
