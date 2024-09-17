@@ -17,4 +17,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::prefix('admin')->name('admin.')->group(function (){
+    Route::resource('categories', CategoryController::class)
+    ->middleware('role:owner'); // admin.categories.index
+
+    Route::resource('teachers', TeacherController::class)
+    ->middleware('role:owner');
+
+    Route::resource('courses', CourseController::class)
+    ->middleware('role:owner|teacher');
+
+    Route::resource('subscribe_transactions', SubscribeTransactionController::class)
+    ->middleware('role:owner');
+
+    Route::resource('course_videos', CourseVideoController::class)
+    ->middleware('role:owner|teacher');
+});
+
 require __DIR__.'/auth.php';
