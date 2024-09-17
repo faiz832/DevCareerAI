@@ -23,15 +23,25 @@
 </head>
 
 <body class="font-sans antialiased">
-    @include('layouts.navbar')
-    <div class="h-[500px] bg-blue-400">
-        <div class="max-w-[1200px] mx-auto">
-            <div class="flex items-center justify-center h-24">
+    <div class="bg-white">
+        <!-- Navbar -->
+        @include('layouts.navbar')
+
+        <!-- Hero Section -->
+        <div class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8">
+            <div class="bg-gradient-to-br from-blue-700 to-blue-400 rounded-lg h-[400px]">
+                <div class="flex items-center h-full">
+                    <div class="p-12">
+                        <h1 class="text-4xl font-semibold mb-4 text-white">Course Program</h1>
+                        <p class="text-white">Build Your Career as a Professional Developer.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    @include('layouts.footer')
+        <!-- Footer -->
+        @include('layouts.footer')
+    </div>
 </body>
 
 </html>
