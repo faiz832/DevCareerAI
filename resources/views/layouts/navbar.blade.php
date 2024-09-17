@@ -92,7 +92,7 @@
                             <div class="relative gap-2 py-2 cursor-pointer" x-data="{ open: false }">
                                 <button @click="open = !open" @click.away="open = false" class="flex items-center">
                                     <div class="avatar">
-                                        <img src="{{ asset('assets/image/profile1.png') }}" alt="user_photo"
+                                        <img src="{{ asset('assets/images/profile1.png') }}" alt="user_photo"
                                             class="rounded-full object-contain w-[36px]">
                                         {{-- <img src="{{ Auth::user()->profile_photo_url }}" alt=""> --}}
                                     </div>
