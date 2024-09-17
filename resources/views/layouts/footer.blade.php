@@ -39,28 +39,7 @@
                 </div>
 
                 <!-- Quick Links -->
-                <div class="grid grid-cols-2 gap-12">
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Information</h2>
-                        <ul class="text-gray-600">
-                            <li class="mb-4">
-                                <a href="#"
-                                    class="text-sm hover:text-blue-500 transition duration-300 ease-in-out">Scholarship</a>
-                            </li>
-                            <li class="mb-4">
-                                <a href="#"
-                                    class="text-sm hover:text-blue-500 transition duration-300 ease-in-out">Resume</a>
-                            </li>
-                            <li class="mb-4">
-                                <a href="#"
-                                    class="text-sm hover:text-blue-500 transition duration-300 ease-in-out">Blog</a>
-                            </li>
-                            <li class="">
-                                <a href="#"
-                                    class="text-sm hover:text-blue-500 transition duration-300 ease-in-out">Showcase</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
                     <div>
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Company</h2>
                         <ul class="text-gray-600">
@@ -75,7 +54,45 @@
                             </li>
                             <li>
                                 <a href="#"
+                                    class="text-sm hover:text-blue-500 transition duration-300 ease-in-out">Our
+                                    Course</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Information</h2>
+                        <ul class="text-gray-600">
+                            <li class="mb-4">
+                                <a href="#"
+                                    class="text-sm hover:text-blue-500 transition duration-300 ease-in-out">Blog</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#"
+                                    class="text-sm hover:text-blue-500 transition duration-300 ease-in-out">Program</a>
+                            </li>
+                            <li class="">
+                                <a href="#"
                                     class="text-sm hover:text-blue-500 transition duration-300 ease-in-out">FAQ</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Teaching</h2>
+                        <ul class="text-gray-600">
+                            <li class="mb-4">
+                                <a href="#"
+                                    class="text-sm hover:text-blue-500 transition duration-300 ease-in-out">Become a
+                                    Teacher</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#"
+                                    class="text-sm hover:text-blue-500 transition duration-300 ease-in-out">Rules &
+                                    Requirements</a>
+                            </li>
+                            <li class="">
+                                <a href="#"
+                                    class="text-sm hover:text-blue-500 transition duration-300 ease-in-out">Help
+                                    Center</a>
                             </li>
                         </ul>
                     </div>
