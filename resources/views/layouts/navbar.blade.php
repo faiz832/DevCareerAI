@@ -21,7 +21,7 @@
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="transform opacity-100 translate-x-0"
                             x-transition:leave-end="transform opacity-0 -translate-x-full" style="display: none;"
-                            class="fixed top-0 left-0 h-screen w-2/4 bg-white shadow-lg z-40">
+                            class="fixed top-0 left-0 h-screen w-2/4 max-w-[212px] bg-white shadow-lg z-40 md:hidden">
                             <div class="py-6 px-4">
                                 <input
                                     class="DocSearch-Input search-wrap border rounded w-full px-4 py-2 focus:ring-0 text-sm"
@@ -53,9 +53,9 @@
 
             <!-- Desktop Navigation (hidden on md and smaller screens) -->
             <div class="hidden md:flex gap-4 lg:gap-8 mx-4">
-                <a href=""
+                <a href="{{ route('front.course') }}"
                     class="font-semibold hover:text-blue-500 transition duration-300 ease-in-out">Course</a>
-                <a href=""
+                <a href="{{ route('front.resume') }}"
                     class="font-semibold hover:text-blue-500 transition duration-300 ease-in-out">Resume</a>
             </div>
 
