@@ -12,7 +12,9 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
+        $teachers = Teacher::orderByDesc('id')->get();
+
+        return view('admin.teachers.index', ['teachers' => $teachers]);
     }
 
     /**
