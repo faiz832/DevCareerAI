@@ -5,7 +5,7 @@
             <div class="md:flex gap-12">
                 <!-- Logo and Description -->
                 <div class="mb-6 md:mb-0">
-                    <a href="{{ url('/') }}" class="flex items-center">
+                    <a href="{{ url('/') }}" class="flex items-center w-max">
                         <span class="self-center text-2xl font-semibold whitespace-nowrap">DevCareer AI</span>
                     </a>
                     <p class="mt-2 text-sm text-gray-600 max-w-md">Jl. Kyai Moch. Syafei Gg 1 No.2450, RT.04/RW.08,
