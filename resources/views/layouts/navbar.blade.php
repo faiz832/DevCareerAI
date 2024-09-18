@@ -14,20 +14,19 @@
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
+                        <!-- Sidebar -->
                         <div x-show="open" x-transition:enter="transition ease-out duration-200"
-                            x-transition:enter-start="transform opacity-0 scale-95"
-                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:enter-start="transform opacity-0 -translate-x-full"
+                            x-transition:enter-end="transform opacity-100 translate-x-0"
                             x-transition:leave="transition ease-in duration-75"
-                            x-transition:leave-start="transform opacity-100 scale-100"
-                            x-transition:leave-end="transform opacity-0 scale-95"
-                            class="absolute left-0 mt-2 w-64 rounded shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                            role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1"
-                            style="display: none;">
-                            <div class="py-1" role="none">
+                            x-transition:leave-start="transform opacity-100 translate-x-0"
+                            x-transition:leave-end="transform opacity-0 -translate-x-full" style="display: none;"
+                            class="fixed top-0 left-0 h-screen w-2/4 bg-white shadow-lg z-40">
+                            <div class="py-6 px-4">
                                 <input
-                                    class="DocSearch-Input search-wrap border-0 w-full px-4 py-2 focus:ring-0 text-sm"
+                                    class="DocSearch-Input search-wrap border rounded w-full px-4 py-2 focus:ring-0 text-sm"
                                     type="search" placeholder="Pencarian pelatihan kursus...">
-                                <div class="border-t border-slate-300"></div>
+                                <div class="border-t border-slate-300 my-4"></div>
                                 <a href="#"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900"
                                     role="menuitem">Course</a>
@@ -62,28 +61,6 @@
 
             <!-- Search and Login Buttons -->
             <div class="flex items-center gap-4 ml-auto">
-                {{-- <div class="flex items-center h-full">
-                    <div class="relative" x-data="{ open: false }">
-                        <!-- Search Button (visible on md and smaller screens) -->
-                        <button @click="open = !open" class="flex items-center md:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </button>
-                        <div x-show="open"
-                            class="absolute right-0 mt-2 w-80 rounded shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                            role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                            <div class="p-2" role="none">
-                                <input
-                                    class="DocSearch-Input search-wrap rounded-full border border-slate-300 w-full px-4 py-2"
-                                    type="search" placeholder="Pencarian pelatihan kursus...">
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-
                 <!-- Login Button -->
                 @if (Route::has('login'))
                     <nav class="relative flex gap-4">
@@ -170,12 +147,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Mobile Search (hidden by default) -->
-    {{-- <div id="mobileSearch" class="hidden md:hidden bg-white p-4 border-t border-slate-200">
-        <input class="DocSearch-Input search-wrap rounded-full border border-slate-300 w-full px-4 py-2"
-            type="search" placeholder="Pencarian pelatihan kursus...">
-    </div> --}}
 </div>
 
 <script>
