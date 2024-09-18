@@ -4,7 +4,7 @@
         <h2 class="text-xl font-bold text-slate-900 mb-4">MENU</h2>
         <ul class="space-y-4">
             <li>
-                <a href="#" class="flex items-center text-slate-900 ">
+                <a href="{{ route('dashboard') }}" class="flex items-center text-slate-900 ">
                     <svg class="h-5 w-5 mr-3 text-slate-900 " xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3z" />
@@ -12,18 +12,43 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+            @role('owner|teacher')
             <li>
-                <a href="#" class="flex items-center text-slate-900 ">
+                <a href="{{ route('admin.courses.index') }}" class="flex items-center text-slate-900 ">
                     <svg class="h-5 w-5 mr-3 text-slate-900 " xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M7 8h10M7 12h10M7 16h10M4 6h16v12H4z" />
                     </svg>
-                    <span>Transaction</span>
+                    <span>Course</span>
+                </a>
+            </li>
+            @endrole
+            @role('student')
+            <li>
+                <a href="{{ route('mycourses.index') }}" class="flex items-center text-slate-900">
+                    <svg class="h-5 w-5 mr-3 text-slate-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 8h10M7 12h10M7 16h10M4 6h16v12H4z" />
+                    </svg>
+                    <span>My Courses</span>
+                </a>
+            </li>
+            @endrole
+            @role('owner')
+            <li>
+                <a href="{{ route('admin.categories.index') }}" class="flex items-center text-slate-900 ">
+                    <svg class="h-5 w-5 mr-3 text-slate-900 " xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 8h10M7 12h10M7 16h10M4 6h16v12H4z" />
+                    </svg>
+                    <span>Category</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center text-slate-900 ">
+                <a href="{{ route('admin.teachers.index') }}" class="flex items-center text-slate-900 ">
                     <svg class="h-5 w-5 mr-3 text-slate-900 " xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -33,15 +58,16 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center text-slate-900 ">
+                <a href="{{ route('admin.subscribe_transactions.index') }}" class="flex items-center text-slate-900 ">
                     <svg class="h-5 w-5 mr-3 text-slate-900 " xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M7 8h10M7 12h10M7 16h10M4 6h16v12H4z" />
                     </svg>
-                    <span>Course</span>
+                    <span>Transaction</span>
                 </a>
             </li>
+            @endrole
             <li>
                 <a href="#" class="flex items-center text-slate-900">
                     <svg class="h-5 w-5 mr-3 text-slate-900" xmlns="http://www.w3.org/2000/svg" fill="none"

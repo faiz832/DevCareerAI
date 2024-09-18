@@ -13,6 +13,12 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        $categories = Category::orderByDesc('id')->get();
+
+        // ddump, cek dah ada datanya apa belum
+        // dd($categories);
+
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**

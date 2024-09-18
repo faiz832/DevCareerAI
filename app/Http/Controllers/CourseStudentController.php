@@ -12,7 +12,13 @@ class CourseStudentController extends Controller
      */
     public function index()
     {
-        //
+        $user = auth()->user();
+
+        // Mengambil kursus yang diikuti oleh user yang login
+        $courses = $user->courses()->with('teacher', 'category')->get();
+
+        // Mengirim data kursus ke view 'front.mycourses'
+        return view('front.mycourses', compact('courses'));
     }
 
     /**
