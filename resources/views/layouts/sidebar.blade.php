@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <div class="bg-white w-1/6 hidden lg:block rounded-lg">
     <div class="px-6 py-4">
-        <h2 class="text-lg font-bold text-slate-900 mb-4 border-b border-gray-300 pb-2">MENU</h2>
+        <h2 class="text-lg font-bold text-slate-900 mb-4">MENU</h2>
         <ul class="space-y-4">
             <li>
                 <a href="{{ route('dashboard') }}" class="flex items-center text-slate-900">
@@ -101,7 +101,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                     </svg>
-                    <span>Logout</span>
+                    <span>Log Out</span>
                 </a>
             </li>
         </ul>
@@ -125,9 +125,9 @@
         x-transition:leave="transition ease-in duration-75"
         x-transition:leave-start="transform opacity-100 translate-x-0"
         x-transition:leave-end="transform opacity-0 -translate-x-full" style="display: none;"
-        class="fixed top-16 left-0 h-full w-2/4 max-w-[212px] bg-white shadow-lg z-40 lg:hidden" @click.stop>
+        class="fixed top-0 left-0 h-full w-2/4 max-w-[212px] bg-white shadow-lg z-40 lg:hidden" @click.stop>
         <div class="py-6 px-4">
-            <h2 class="text-lg font-bold text-slate-900 mb-4 border-b border-gray-300 pb-2">MENU</h2>
+            <h2 class="text-lg font-bold text-slate-900 mb-4">MENU</h2>
             <ul class="space-y-4">
                 <li>
                     <a href="{{ route('dashboard') }}" class="flex items-center text-slate-900">
