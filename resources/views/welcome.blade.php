@@ -58,7 +58,7 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 <a href="/akademi/FGA"
-                    class="card bg-white border rounded-3xl p-3 md:p-5 text-center hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2">
+                    class="card bg-white border rounded-lg p-3 md:p-5 text-center hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2">
                     <div class="relative text-light">
                         <img src="https://bucket.sdmdigital.id/dts-pelatihan/akademi/logo/06514e58-fa23-41cd-9b08-1969dcca878a.png"
                             class="h-[152px] mx-auto" alt="Lulusan Baru">
@@ -69,7 +69,7 @@
                     </div>
                 </a>
                 <a href="/akademi/VSGA"
-                    class="card bg-white border rounded-3xl p-3 md:p-5 text-center hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2">
+                    class="card bg-white border rounded-lg p-3 md:p-5 text-center hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2">
                     <div class="relative text-light">
                         <img src="https://bucket.sdmdigital.id/dts-pelatihan/akademi/logo/e34610c2-2b02-4bd9-8df1-74c32201a977.png"
                             class="h-[152px] mx-auto" alt="Lulusan Vokasi">
@@ -80,7 +80,7 @@
                     </div>
                 </a>
                 <a href="/akademi/TSA"
-                    class="card bg-white border rounded-3xl p-3 md:p-5 text-center hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2">
+                    class="card bg-white border rounded-lg p-3 md:p-5 text-center hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2">
                     <div class="relative text-light">
                         <img src="https://bucket.sdmdigital.id/dts-pelatihan/akademi/logo/9598c7de-1507-49b5-a37a-14398a513119.png"
                             class="h-[152px] mx-auto" alt="Mahasiswa">
@@ -91,7 +91,7 @@
                     </div>
                 </a>
                 <a href="/akademi/TSA"
-                    class="card bg-white border rounded-3xl p-3 md:p-5 text-center hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2">
+                    class="card bg-white border rounded-lg p-3 md:p-5 text-center hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2">
                     <div class="relative text-light">
                         <img src="https://bucket.sdmdigital.id/dts-pelatihan/akademi/logo/9598c7de-1507-49b5-a37a-14398a513119.png"
                             class="h-[152px] mx-auto" alt="Mahasiswa">
@@ -107,9 +107,9 @@
 
         <!-- Courses -->
         <section class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8">
-            <div class="bg-gray-100 rounded-lg px-6 py-12">
+            <div class="bg-blue-100 rounded-lg p-12">
                 <h2 class="text-2xl font-semibold mb-12 text-center">Featured Courses</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Courses Card -->
                     <div
                         class="bg-white rounded-lg overflow-hidden group shadow-lg transition duration-300 ease-in-out">
