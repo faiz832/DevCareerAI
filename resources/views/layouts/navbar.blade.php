@@ -27,12 +27,8 @@
                                     class="DocSearch-Input search-wrap border rounded w-full px-4 py-2 focus:ring-0 text-sm"
                                     type="search" placeholder="Pencarian pelatihan kursus...">
                                 <div class="border-t border-slate-300 my-4"></div>
-                                <a href="#"
-                                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900"
-                                    role="menuitem">Course</a>
-                                <a href="#"
-                                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900"
-                                    role="menuitem">Resume</a>
+                                <a href="#" class="text-slate-900 block px-4 py-2" role="menuitem">Course</a>
+                                <a href="#" class="text-slate-900 block px-4 py-2" role="menuitem">Resume</a>
                             </div>
                         </div>
                     </div>
@@ -113,7 +109,7 @@
                                                 class="text-gray-700 block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900"
                                                 role="menuitem"
                                                 onclick="event.preventDefault(); this.closest('form').submit();">
-                                                Logout
+                                                Log Out
                                             </button>
                                         </form>
                                     </div>
@@ -122,7 +118,7 @@
                         @else
                             <a href="{{ route('login') }}"
                                 class="rounded-full md:rounded bg-blue-500 md:bg-white hover:bg-blue-500 border border-blue-500 p-2 md:py-2 md:px-4 font-semibold text-blue-500 hover:text-white text-center transition duration-300 ease-in-out">
-                                <span class="hidden md:inline">Login</span>
+                                <span class="hidden md:inline">Log In</span>
                                 <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 md:hidden"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -138,7 +134,7 @@
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}"
                                     class="hidden md:inline rounded bg-blue-500 hover:bg-blue-600 border border-blue-500 hover:border-blue-600 py-2 px-4 font-semibold text-white text-center transition duration-300 ease-in-out">
-                                    Register
+                                    Sign Up
                                 </a>
                             @endif
                         @endauth
