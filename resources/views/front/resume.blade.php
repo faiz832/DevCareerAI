@@ -84,7 +84,7 @@
                                 class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 transition-opacity duration-300 ease-in-out">
                                 <!-- Modal Content -->
                                 <div class="bg-white rounded-lg shadow-lg w-4/12 p-6" @click.away="open = false">
-                                    <h2 class="text-xl font-semibold my-6">Announcement</h2>
+                                    <h2 class="text-xl font-semibold my-6">Please log in to continue</h2>
                                     <svg width="200" height="100" viewBox="0 0 537 447" fill="none"
                                         xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
                                         <g clip-path="url(#clip0_35_987)">
@@ -369,9 +369,9 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <p class="text-gray-700 my-6">Please log in to continue.</p>
+                                    {{-- <p class="text-gray-700 my-6"></p> --}}
                                     <a href="/login"
-                                        class="w-2/4 bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 font-bold py-2 px-4 rounded inline-flex items-center justify-center mb-4 transition duration-300 ease-in-out">
+                                        class="w-2/4 bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 font-bold py-2 px-4 rounded inline-flex items-center justify-center my-4 transition duration-300 ease-in-out">
                                         Log In
                                     </a>
                                     <a href="/register"
