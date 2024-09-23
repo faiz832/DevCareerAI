@@ -87,7 +87,7 @@
                     <!-- Activity -->
                     <div class="text-xl">Activity</div>
                     <div class="rounded overflow-hidden shadow-lg">
-                        <table class="min-w-full divide-y divide-gray-200">
+                        <table id="dataTable" class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
                                 <tr>
                                     <th

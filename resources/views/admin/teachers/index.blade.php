@@ -88,7 +88,7 @@
 
                     <div class="text-xl">Teachers</div>
                     <div class="">
-                        <table id="example" class="display" style="width:100%">
+                        <table id="dataTable" class="display" style="width:100%">
                             <thead class="bg-gray-50">
                                 <tr>
                                     <th
