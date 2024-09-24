@@ -1,9 +1,11 @@
 div.col-start-2.justify-self-end {
     justify-self: end;
 }
-select#dt-length-0.border.px-3.py-2.rounded-lg.border-gray-200.focus:border-blue-500.focus:ring
-    focus:ring-blue-500.focus:ring-opacity-50 {
-    padding-inline-end: 2.5rem;
-    position: relative;
-    z-index: 1;
+#dataTable_wrapper .grid .justify-self-start .dt-length #dt-length-0 {
+    padding-right: 2rem !important;
+}
+
+div.justify-self-start {
+    display: flex;
+    align-items: center;
 }
