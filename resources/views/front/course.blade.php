@@ -116,10 +116,15 @@
                             <h1 class="font-semibold text-xl mb-2"><?= $content['title'] ?></h1>
 
                             <!-- Short description -->
-                            <p class="text-md text-gray-600 mb-4"><?= $content['desc'] ?></p>
+                            {{-- <p class="text-md text-gray-600 mb-4"><?= $content['desc'] ?></p>
 
                             <!-- Teacher info -->
-                            <p class="text-sm text-gray-600 mb-2">By Sandika Galih</p>
+                            <p class="text-sm text-gray-600 mb-2">By Sandika Galih</p> --}}
+
+                            <div class="flex flex-col justify-between h-full">
+                                <p class="text-md text-gray-600 min-h-16"><?= $content['desc'] ?></p>
+                                <p class="text-sm text-gray-600 mb-2">By Sandika Galih</p>
+                            </div>
 
                             <!-- Students and Button Row -->
                             <div class="flex items-center justify-between mt-auto">
