@@ -30,7 +30,8 @@
 
         .tab-btn.active {
             border-bottom: 2px solid;
-            @apply text-blue-600;
+            border-color: #2563eb;
+            color: #2563eb
         }
     </style>
 </head>
@@ -45,7 +46,8 @@
             <h1
                 class="text-6xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-400 my-12">
                 Courses</h1>
-            <p class="w-2/4 mx-auto text-center text-lg">Build your career as a professional developer. Choose from a
+            <p class="w-full lg:w-2/4 mx-auto text-center text-lg">Build your career as a professional developer. Choose
+                from a
                 wide variety of professional development courses designed to enhance your skills and improve your
                 career.</p>
         </section>
@@ -101,7 +103,7 @@
                 // Loop through each tab to generate content
                 foreach ($tabs as $tabId => $contents): ?>
             <div id="<?= $tabId ?>" class="tab-content <?= $tabId == 'tab1' ? 'active' : '' ?>">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     <?php foreach ($contents as $content): ?>
                     <div
                         class="bg-white border rounded-lg p-3 hover:cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2 flex flex-col justify-between">
@@ -110,13 +112,30 @@
 
                         <!-- Flex container for text and button -->
                         <div class="flex flex-col flex-grow">
-                            <div class="mb-4">
-                                <h2 class="text-2xl font-bold mb-2"><?= $content['title'] ?></h2>
-                                <p class="text-gray-600"><?= $content['desc'] ?></p>
-                            </div>
-                            <div class="mt-auto">
+                            <!-- Title -->
+                            <h1 class="font-semibold text-xl mb-2"><?= $content['title'] ?></h1>
+
+                            <!-- Short description -->
+                            <p class="text-md text-gray-600 mb-4"><?= $content['desc'] ?></p>
+
+                            <!-- Teacher info -->
+                            <p class="text-sm text-gray-600 mb-2">By Sandika Galih</p>
+
+                            <!-- Students and Button Row -->
+                            <div class="flex items-center justify-between mt-auto">
+                                <!-- SVG Student Icon -->
+                                <div class="flex items-center">
+                                    <svg class="h-4 w-4 mr-2 text-gray-800" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    <span class="text-xs text-gray-800">100+ Students</span>
+                                </div>
+
+                                <!-- Button -->
                                 <button
-                                    class="bg-white hover:bg-blue-500 w-full text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded transition duration-300 ease-in-out">
+                                    class="bg-white text-sm hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded-lg transition duration-300 ease-in-out w-1/2">
                                     Start Learning
                                 </button>
                             </div>
