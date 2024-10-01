@@ -14,10 +14,16 @@
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <style>
         /* Hide scrollbar in Chrome, Safari and Opera */
         ::-webkit-scrollbar {
             display: none;
+        }
+
+        #icon-container {
+            perspective: 1000px;
         }
     </style>
 </head>
@@ -50,41 +56,41 @@
         <!-- Features section -->
         <section class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <!-- Repeat this feature structure 4 times -->
-                <div class="text-center">
-                    <div
-                        class="bg-gradient-to-r from-blue-700 to-blue-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <!-- Add icon here -->
+                <a href="{{ url('/course') }}" class="text-center">
+                    <div class="relative w-20 h-20 mx-auto mb-4 icon-container">
+                        <img src="{{ asset('assets/icons/web.png') }}"
+                            class="transition-transform duration-200 ease-out -mt-2 icon" alt="Icon">
                     </div>
                     <h3 class="mb-2">Web Developer</h3>
-                </div>
-                <div class="text-center">
-                    <div
-                        class="bg-gradient-to-r from-blue-700 to-blue-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <!-- Add icon here -->
+                </a>
+                <a href="{{ url('/course') }}" class="text-center">
+                    <div class="relative w-20 h-20 mx-auto mb-4 icon-container">
+                        <img src="{{ asset('assets/icons/android.png') }}"
+                            class="transition-transform duration-200 ease-out -mt-2 icon" alt="Icon">
                     </div>
                     <h3 class="mb-2">Android Developer</h3>
-                </div>
-                <div class="text-center">
-                    <div
-                        class="bg-gradient-to-r from-blue-700 to-blue-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <!-- Add icon here -->
+                </a>
+                <a href="{{ url('/course') }}" class="text-center">
+                    <div class="relative w-20 h-20 mx-auto mb-4 icon-container">
+                        <img src="{{ asset('assets/icons/ml.png') }}"
+                            class="transition-transform duration-200 ease-out -mt-2 icon" alt="Icon">
                     </div>
                     <h3 class="mb-2">Machine Learning</h3>
-                </div>
-                <div class="text-center">
-                    <div
-                        class="bg-gradient-to-r from-blue-700 to-blue-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <!-- Add icon here -->
+                </a>
+                <a href="{{ url('/course') }}" class="text-center">
+                    <div class="relative w-20 h-20 mx-auto mb-4 icon-container">
+                        <img src="{{ asset('assets/icons/chart.png') }}"
+                            class="transition-transform duration-200 ease-out -mt-2 icon" alt="Icon">
                     </div>
                     <h3 class="mb-2">Data Scientist</h3>
-                </div>
+                </a>
             </div>
+
         </section>
 
-        {{-- <section class="bg-gray-100 py-6 my-12"> --}}
-        <div class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8 mt-12 mb-12 lg:mb-24">
-            <h1 class="text-3xl font-semibold text-center mb-4">The Advantages of Our Program</h1>
+        <!-- Advantages section -->
+        <section class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8 mt-12 mb-12 lg:mb-24">
+            <h1 class="text-3xl font-bold text-center mb-4">The Advantages of Our Program</h1>
             <div class="flex justify-center">
                 <p class="text-sm text-center text-gray-500 mb-4 w-3/4 lg:w-2/4">Unlock personalized learning paths and
                     AI-driven
@@ -175,6 +181,31 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Accordion Item 4 -->
+                        <div
+                            class="bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2">
+                            <button @click="setActiveAccordion(4)" class="w-full p-6 text-left">
+                                <h3 class="text-lg font-semibold flex items-center justify-between">
+                                    <span>Direct Support</span>
+                                    <svg class="w-6 h-6 text-gray-400 transform transition-transform duration-300"
+                                        :class="{ 'rotate-180': activeAccordion === 4 }" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </h3>
+                            </button>
+                            <div x-ref="container3"
+                                x-bind:style="activeAccordion === 4 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' :
+                                    'max-height: 0px'"
+                                class="overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="px-6 pb-6">
+                                    Get personalized guidance from experienced teachers,
+                                    ensuring you stay on track with your learning goals.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="hidden md:block w-full lg:w-7/12 relative">
@@ -186,8 +217,8 @@
 
                         <!-- Image container -->
                         <div class="relative z-10 overflow-hidden">
-                            <img src="{{ asset('assets/images/keunggulan.png') }}" alt="Freepik" class="w-full h-auto"
-                                loading="lazy">
+                            <img src="{{ asset('assets/images/keunggulan.png') }}" alt="Freepik"
+                                class="w-full h-auto" loading="lazy">
 
                             <!-- Overlay to create crop effect -->
                             <div
@@ -197,8 +228,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        {{-- </section> --}}
+        </section>
 
         <!-- Courses section -->
         <section class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8">
@@ -331,15 +361,17 @@
             </div>
         </section>
 
-        <section class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Optimalkan CV Anda dengan AI</h2>
-            <p class="text-center max-w-xl mx-auto text-gray-600 mb-8">
-                Upload CV Anda dan biarkan AI kami menganalisis serta memberikan rekomendasi yang dapat meningkatkan
-                peluang Anda diterima di pekerjaan impian.
+        <!-- CTA section -->
+        <section class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8 my-28">
+            <h2 class="text-3xl font-bold text-center mb-8">Optimize your CV with AI</h2>
+            <p class="text-center max-w-xl mx-auto text-gray-600 mb-20">
+                Upload your CV and let our AI analyze and provide recommendations that can increase your chances of
+                getting your dream job.
             </p>
-            <div class="text-center">
-                <a href="#" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Optimize My
-                    Resume Now</a>
+            <div class="text-center mb-12">
+                <a href="{{ url('/resume') }}"
+                    class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300">Optimize
+                    Now</a>
             </div>
         </section>
 
@@ -380,6 +412,40 @@
         <!-- Footer -->
         @include('layouts.footer')
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const containers = document.querySelectorAll(
+                '.icon-container'); // Ambil semua container dengan class .icon-container
+
+            containers.forEach(container => {
+                const icon = container.querySelector(
+                    '.icon'); // Cari elemen img dengan class .icon di dalam container
+
+                container.addEventListener('mousemove', (e) => {
+                    const rect = container.getBoundingClientRect();
+                    const x = e.clientX - rect.left; // Mouse X relative to container
+                    const y = e.clientY - rect.top; // Mouse Y relative to container
+
+                    // Hitung posisi pusat elemen
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    // Hitung rotasi dengan gerakan lebih besar menuju tepi (berlawanan arah kursor)
+                    const rotateY = ((centerX - x) / centerX) * -20;
+                    const rotateX = ((y - centerY) / centerY) * -20;
+
+                    // Terapkan transformasi
+                    icon.style.transform =
+                        `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.1)`;
+                });
+
+                container.addEventListener('mouseleave', () => {
+                    // Reset rotasi dengan smooth
+                    icon.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
