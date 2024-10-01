@@ -35,13 +35,13 @@
         <!-- Right side - Login form -->
         <div class="w-full md:w-4/6 bg-white p-16 flex items-center justify-center md:justify-start">
             <div class="w-full max-w-md">
-                <a href="{{ url('/') }}" class="flex items-center w-max -ml-1.5">
-                    <svg class="w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        transform="rotate(270)">
+                <a href="{{ url('/') }}" class="flex items-center w-max -ml-1.5 group">
+                    <svg class="w-6 transform transition-transform duration-300 group-hover:-translate-x-1"
+                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier">
-                            <path d="M6 15L12 9L18 15" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"
+                            <path d="M15 18L9 12L15 6" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round"></path>
                         </g>
                     </svg>
