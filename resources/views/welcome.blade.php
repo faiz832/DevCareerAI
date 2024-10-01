@@ -39,7 +39,7 @@
                     class="absolute inset-0 w-full h-full object-cover object-center" loading="lazy">
 
                 <!-- Blur Overlay -->
-                <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-transparent"></div>
 
                 <!-- Content -->
                 <div class="relative flex items-center h-full">
