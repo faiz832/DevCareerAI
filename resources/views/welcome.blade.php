@@ -39,7 +39,7 @@
                     class="absolute inset-0 w-full h-full object-cover object-center" loading="lazy">
 
                 <!-- Blur Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-transparent"></div>
+                <div class="absolute inset-0 w-3/4 bg-gradient-to-r from-blue-500 to-transparent"></div>
 
                 <!-- Content -->
                 <div class="relative flex items-center h-full">
@@ -94,16 +94,18 @@
         </section>
 
         <!-- CV CTA section -->
-        <section class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8 my-28">
-            <h2 class="text-3xl font-bold text-center mb-8">Optimize your CV with AI</h2>
-            <p class="text-center max-w-xl mx-auto text-gray-600 mb-20">
-                Upload your CV and let our AI analyze and provide recommendations that can increase your chances of
-                getting your dream job.
-            </p>
-            <div class="text-center mb-12">
-                <a href="{{ url('/resume') }}"
-                    class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300">Optimize
-                    Now</a>
+        <section class="relative max-w-[1200px] mx-auto p-4 py-6 lg:py-8 my-28">
+            <div class="relative rounded-lg p-8 lg:p-24 border shadow-lg bg-white w-3/4 mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">Optimize your CV with AI</h2>
+                <p class="text-center max-w-xl mx-auto text-gray-600 mb-12 lg:mb-20">
+                    Upload your CV and let our AI analyze and provide recommendations that can increase your chances of
+                    getting your dream job.
+                </p>
+                <div class="text-center">
+                    <a href="{{ url('/resume') }}"
+                        class="px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300">Optimize
+                        Now</a>
+                </div>
             </div>
         </section>
 
@@ -148,7 +150,7 @@
                                 <span class="text-xs text-gray-800">100+ Students</span>
                             </div>
                             <button
-                                class="bg-white text-sm hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded-lg transition duration-300 ease-in-out w-1/2">
+                                class="bg-white text-sm hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded transition duration-300 ease-in-out w-1/2">
                                 Start Learning
                             </button>
                         </div>
@@ -161,7 +163,8 @@
                     <div class="flex flex-col flex-grow">
                         <h3 class="font-semibold text-xl mb-2">Javascript</h3>
                         <div class="flex flex-col justify-between h-full">
-                            <p class="text-md text-gray-600 min-h-16">Master dynamic web content with JavaScript.
+                            <p class="text-md text-gray-600 min-h-16">Master dynamic web content with
+                                JavaScript.
                             </p>
                             <p class="text-sm text-gray-600 mb-2">By Sandika Galih</p>
                         </div>
@@ -175,7 +178,7 @@
                                 <span class="text-xs text-gray-800">100+ Students</span>
                             </div>
                             <button
-                                class="bg-white text-sm hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded-lg transition duration-300 ease-in-out w-1/2">
+                                class="bg-white text-sm hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded transition duration-300 ease-in-out w-1/2">
                                 Start Learning
                             </button>
                         </div>
@@ -188,7 +191,8 @@
                     <div class="flex flex-col flex-grow">
                         <h3 class="font-semibold text-xl mb-2">PHP</h3>
                         <div class="flex flex-col justify-between h-full">
-                            <p class="text-md text-gray-600 min-h-16">Master dynamic web content with JavaScript.
+                            <p class="text-md text-gray-600 min-h-16">Master dynamic web content with
+                                JavaScript.
                             </p>
                             <p class="text-sm text-gray-600 mb-2">By Sandika Galih</p>
                         </div>
@@ -202,7 +206,7 @@
                                 <span class="text-xs text-gray-800">100+ Students</span>
                             </div>
                             <button
-                                class="bg-white text-sm hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded-lg transition duration-300 ease-in-out w-1/2">
+                                class="bg-white text-sm hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded transition duration-300 ease-in-out w-1/2">
                                 Start Learning
                             </button>
                         </div>
@@ -215,7 +219,8 @@
                     <div class="flex flex-col flex-grow">
                         <h3 class="font-semibold text-xl mb-2">Laravel 11</h3>
                         <div class="flex flex-col justify-between h-full">
-                            <p class="text-md text-gray-600 min-h-16">Master dynamic web content with JavaScript.
+                            <p class="text-md text-gray-600 min-h-16">Master dynamic web content with
+                                JavaScript.
                             </p>
                             <p class="text-sm text-gray-600 mb-2">By Sandika Galih</p>
                         </div>
@@ -229,7 +234,7 @@
                                 <span class="text-xs text-gray-800">100+ Students</span>
                             </div>
                             <button
-                                class="bg-white text-sm hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded-lg transition duration-300 ease-in-out w-1/2">
+                                class="bg-white text-sm hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded transition duration-300 ease-in-out w-1/2">
                                 Start Learning
                             </button>
                         </div>
@@ -250,7 +255,7 @@
                     job market.</p>
             </div>
             <div class="flex flex-col lg:flex-row gap-12">
-                <div class="w-full lg:w-5/12 flex flex-col justify-center">
+                <div class="w-full lg:w-5/12 flex flex-col justify-center p-12 lg:p-0">
                     <div x-data="{
                         activeAccordion: null,
                         setActiveAccordion(id) {
@@ -358,7 +363,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hidden md:block w-full lg:w-7/12 relative">
+                <div class="hidden lg:block w-full lg:w-7/12 relative">
                     <div class="relative">
                         <!-- Background gradient -->
                         <div
@@ -380,31 +385,69 @@
             </div>
         </section>
 
-        <!-- CTA section -->
-        <section class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Container 1 -->
-                <div
-                    class="relative bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg p-6 flex items-center h-[200px]">
-                    <div class="text-white z-10">
-                        <h2 class="text-2xl font-semibold w-3/4">Learning Bootcamp & Program</h2>
-                        <a href="#" class="text-sm text-blue-200 underline mt-2 inline-block">Read More</a>
-                    </div>
-                    <div class="absolute right-0 bottom-0 w-1/2">
-                        <img src="{{ asset('assets/images/keunggulan.png') }}" alt="Students">
+        <!-- Subscribe CTA section -->
+        <section class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8 mt-12 mb-12 lg:mb-24">
+            <div class="flex flex-col lg:flex-row">
+                <div class="hidden lg:block w-full lg:w-6/12 relative">
+                    <div class="relative">
+                        <!-- Background gradient -->
+                        <div
+                            class="absolute bottom-0 left-12 right-16 top-8 bg-gradient-to-tl from-cyan-500 via-cyan-400 to-blue-100 rounded-3xl">
+                        </div>
+
+                        <!-- Image container -->
+                        <div class="relative z-10 overflow-hidden">
+                            <img src="{{ asset('assets/images/subscribe2.png') }}" alt="Freepik"
+                                class="w-full h-auto" loading="lazy">
+
+                            <!-- Overlay to create crop effect -->
+                            <div
+                                class="absolute bottom-0 left-12 right-16 h-1/4 bg-gradient-to-t from-cyan-500 via-cyan-400 to-transparent rounded-b-3xl">
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="w-full lg:w-6/12 flex flex-col justify-center p-12">
+                    <div class="w-10/12">
+                        <h1 class="text-4xl font-bold mb-4">Unlock Courses & CV Optimization</h1>
+                        <p class="text-gray-500 mb-6">
+                            Subscribe now to unlock a wide range of courses designed to boost your career and utilize
+                            our
+                            AI-powered CV optimization tool to stand out in the job market.
+                        </p>
+                        <ul class="list-disc ml-5 mb-[2.25rem]">
+                            <li class="mb-2">Akses tidak terbatas ke lebih dari 27.000 kursus terpopuler Udemy, kapan
+                                saja, di mana
+                                saja
+                            </li>
+                            <li class="mb-2">Sertifikasi teratas dalam teknologi dan bisnis</li>
+                            <li>AI-Powered CV Enhancements</li>
+                        </ul>
+                        <a href="{{ route('login') }}"
+                            class="bg-blue-500 text-white w-max py-3 px-6 rounded font-semibold hover:bg-blue-600 transition duration-300">
+                            Subscribe Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <!-- Container 2 -->
-                <div
-                    class="relative bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg p-6 flex items-center h-[200px]">
-                    <div class="text-white z-10">
-                        <h2 class="text-2xl font-semibold w-3/4">Advanced Coding & Development</h2>
-                        <a href="#" class="text-sm text-blue-200 underline mt-2 inline-block">Read More</a>
+        <!--Become a Teacher CTA Section -->
+        <section class="max-w-[1200px] mx-auto p-4 py-6 lg:py-8">
+            <div class="rounded-lg h-max md:h-[400px] overflow-hidden bg-gradient-to-br from-cyan-200 to-blue-400">
+                <div class="flex flex-col md:flex-row items-center h-full w-full justify-between gap-8 p-12 lg:p-24">
+                    <div class="w-full md:w-[500px] lg:w-[570px]">
+                        <h1 class="text-center md:text-left text-4xl lg:text-5xl font-bold mb-8">Become a teacher,
+                            inspire future developers!
+                        </h1>
+                        <p class="text-center md:text-left text-gray-700">Become a part of our expert teaching team and
+                            inspire the next
+                            generation of learners with your knowledge and passion.</p>
                     </div>
-                    <div class="absolute right-0 bottom-0 w-1/2">
-                        <img src="{{ asset('assets/images/keunggulan.png') }}" alt="Students">
-                    </div>
+                    <a href="{{ route('login') }}"
+                        class="bg-blue-500 text-white px-6 py-3 rounded font-semibold hover:bg-blue-600 transition duration-300">
+                        Contact Us
+                    </a>
                 </div>
             </div>
         </section>
