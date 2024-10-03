@@ -136,7 +136,7 @@
 
                                 <!-- Button -->
                                 <button
-                                    class="bg-white text-sm hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded-lg transition duration-300 ease-in-out w-1/2">
+                                    class="bg-white text-sm hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded transition duration-300 ease-in-out w-1/2">
                                     Start Learning
                                 </button>
                             </div>
