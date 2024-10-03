@@ -18,6 +18,11 @@ class SubscribeTransaction extends Model
         'subscription_start_date',
     ];
 
+    protected $casts = [
+        'is_paid' => 'boolean',
+        'subscription_start_date' => 'date',
+    ];
+
     public function user() {
         return $this->belongsTo(User::class);
     }

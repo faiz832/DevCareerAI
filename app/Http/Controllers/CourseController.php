@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCourseRequest;
 use App\Models\Category;
 use App\Models\Course;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+
 
 class CourseController extends Controller
 {
@@ -42,7 +45,7 @@ class CourseController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCourseRequest $request)
     {
         $teacher = Teacher::where('user_id', Auth::user()->id)->first();
 
@@ -65,11 +68,19 @@ class CourseController extends Controller
 
             $validated['teacher_id'] = $teacher->id;
 
-            Course::create($validated);
+            $course = Course::create($validated);
+
+            // Log activity
+            activity()
+                ->causedBy(Auth::user())
+                ->performedOn($course)
+                ->withProperties(['attributes' => $course->toArray()])
+                ->log('Course created');
 
         });
 
-        return redirect()->route('admin.courses.index');
+        return redirect()->route('admin.courses.index')->with('success', 'Course created successfully');
+
     }
 
     /**
@@ -105,7 +116,18 @@ class CourseController extends Controller
 
             $validated['slug'] = Str::slug($validated['name']);
 
+            $oldAttributes = $course->getAttributes();
             $course->update($validated);
+
+            // Log activity
+            activity()
+                ->causedBy(Auth::user())
+                ->performedOn($course)
+                ->withProperties([
+                    'old' => $oldAttributes,
+                    'attributes' => $course->getAttributes()
+                ])
+                ->log('Course updated');
 
         });
 
@@ -121,13 +143,20 @@ class CourseController extends Controller
 
         try {
             $course->delete();
+
+            // Log activity
+            activity()
+                ->causedBy(Auth::user())
+                ->performedOn($course)
+                ->log('Course deleted');
+
             DB::commit();
 
-            return redirect()->route('admin.courses.index');
+            return redirect()->route('admin.courses.index')->with('success', 'Course deleted successfully');
 
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->route('admin.courses.index')->with('error', 'terjadinya sebuah error');
+            return redirect()->route('admin.courses.index')->with('error', 'An error occurred while deleting the course');
         }
     }
 }

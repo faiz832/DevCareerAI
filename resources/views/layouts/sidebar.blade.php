@@ -99,7 +99,7 @@
                 </li>
             @endrole
             <li>
-                <a href="#" class="flex items-center text-slate-900">
+                <a href="/profile" class="flex items-center text-slate-900">
                     <svg class="h-5 w-5 mr-3 text-slate-900" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -109,7 +109,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center text-slate-900">
+                <a href="{{ route('settings.edit') }}" class="flex items-center text-slate-900">
                     <svg class="h-5 w-5 mr-3 text-slate-900" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

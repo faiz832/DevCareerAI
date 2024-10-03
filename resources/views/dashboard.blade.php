@@ -30,7 +30,7 @@
                                         </div>
                                         <div class="text-white text-start">
                                             <div class="text-xl font-semibold">Teachers</div>
-                                            <div class="text-xs">100+</div>
+                                            <div class="text-xs">{{ $teacherCount }}+</div>
                                         </div>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="text-white text-start">
                                             <div class="text-xl font-semibold">Students</div>
-                                            <div class="text-xs">100+</div>
+                                            <div class="text-xs">{{ $studentCount }}+</div>
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
                                         </div>
                                         <div class="text-white text-start">
                                             <div class="text-xl font-semibold">Courses</div>
-                                            <div class="text-xs">100+</div>
+                                            <div class="text-xs">{{ $courseCount }}+</div>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                                         </div>
                                         <div class="text-white text-start">
                                             <div class="text-xl font-semibold">Transactions</div>
-                                            <div class="text-xs">100+</div>
+                                            <div class="text-xs">{{ $revenueTotal }}+</div>
                                         </div>
                                     </div>
                                 </div>
@@ -96,21 +96,51 @@
                                             Account</th>
                                         <th
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Role</th>
+                                            Action</th>
                                         <th
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Course</th>
+                                            Details</th>
                                         <th
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Date</th>
-                                        <th
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Status</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     <!-- Example row, repeat as needed -->
-                                    <tr>
+                                    @foreach($activities as $activity)
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="flex-shrink-0 h-10 w-10">
+                                                        <img class="h-10 w-10 rounded-full" src="{{ $activity->causer->avatar ?? asset('images/default-avatar.png') }}" alt="">
+                                                    </div>
+                                                    <div class="ml-4">
+                                                        <div class="text-sm font-medium text-gray-900">{{ $activity->causer->name ?? 'System' }}</div>
+                                                        <div class="text-sm text-gray-500">{{ $activity->causer->email ?? '' }}</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-900">{{ $activity->description }}</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-900">
+                                                    @if($activity->subject)
+                                                        {{ class_basename($activity->subject_type) }} #{{ $activity->subject_id }}
+                                                    @endif
+                                                    @if($activity->properties->has('attributes'))
+                                                        @foreach($activity->properties['attributes'] as $key => $value)
+                                                            <div>{{ $key }}: {{ is_array($value) ? json_encode($value) : $value }}</div>
+                                                        @endforeach
+                                                    @endif
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-900">{{ $activity->created_at->format('Y-m-d H:i') }}</div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    {{-- <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10">
@@ -124,35 +154,6 @@
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Teacher</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Introduction to Web Development</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">2023-09-20</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <span
-                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                Active
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="flex items-center">
-                                                <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded-full" src="https://via.placeholder.com/40"
-                                                        alt="">
-                                                </div>
-                                                <div class="ml-4">
-                                                    <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                                    <div class="text-sm text-gray-500">john@example.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="text-sm text-gray-900">Student</div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
@@ -167,152 +168,7 @@
                                                 Active
                                             </span>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="flex items-center">
-                                                <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded-full"
-                                                        src="https://via.placeholder.com/40" alt="">
-                                                </div>
-                                                <div class="ml-4">
-                                                    <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                                    <div class="text-sm text-gray-500">john@example.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Student</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Introduction to Web Development</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">2023-09-20</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <span
-                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                Active
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="flex items-center">
-                                                <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded-full"
-                                                        src="https://via.placeholder.com/40" alt="">
-                                                </div>
-                                                <div class="ml-4">
-                                                    <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                                    <div class="text-sm text-gray-500">john@example.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Student</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Introduction to Web Development</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">2023-09-20</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <span
-                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                Active
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="flex items-center">
-                                                <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded-full"
-                                                        src="https://via.placeholder.com/40" alt="">
-                                                </div>
-                                                <div class="ml-4">
-                                                    <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                                    <div class="text-sm text-gray-500">john@example.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Student</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Introduction to Web Development</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">2023-09-20</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <span
-                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                Active
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="flex items-center">
-                                                <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded-full"
-                                                        src="https://via.placeholder.com/40" alt="">
-                                                </div>
-                                                <div class="ml-4">
-                                                    <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                                    <div class="text-sm text-gray-500">john@example.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Student</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Introduction to Web Development</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">2023-09-20</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <span
-                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                Active
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="flex items-center">
-                                                <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded-full"
-                                                        src="https://via.placeholder.com/40" alt="">
-                                                </div>
-                                                <div class="ml-4">
-                                                    <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                                    <div class="text-sm text-gray-500">john@example.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Student</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Introduction to Web Development</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">2023-09-20</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <span
-                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                Active
-                                            </span>
-                                        </td>
-                                    </tr>
+                                    </tr> --}}
                                     <!-- Add more rows as needed -->
                                 </tbody>
                             </table>

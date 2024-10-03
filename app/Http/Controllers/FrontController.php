@@ -43,4 +43,49 @@ class FrontController extends Controller
     public function resume(){
         return view('front.resume');
     }
+
+    public function aboutUs()
+    {
+        return view('front.about-us');
+    }
+
+    public function contact()
+    {
+        return view('front.contact');
+    }
+
+    public function program()
+    {
+        return view('front.program');
+    }
+
+    public function faq()
+    {
+        return view('front.faq');
+    }
+
+    public function becomeTeacher()
+    {
+        return view('front.become-teacher');
+    }
+
+    public function rulesRequirements()
+    {
+        return view('front.rules-requirements');
+    }
+
+    public function helpCenter()
+    {
+        return view('front.help-center');
+    }
+
+    public function terms()
+    {
+        return view('front.terms');
+    }
+
+    public function privacy()
+    {
+        return view('front.privacy');
+    }
 }

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Teacher;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TeacherController extends Controller
 {
@@ -22,7 +24,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.teachers.create');
     }
 
     /**
@@ -30,7 +32,31 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'email' => 'required|email|exists:users,email'
+        ]);
+
+        DB::beginTransaction();
+        try {
+            $user = User::where('email', $request->email)->firstOrFail();
+
+            if ($user->hasRole('teacher')) {
+                return redirect()->back()->with('error', 'User is already a teacher.');
+            }
+
+            $teacher = Teacher::create([
+                'user_id' => $user->id,
+                'is_active' => true,
+            ]);
+
+            $user->assignRole('teacher');
+
+            DB::commit();
+            return redirect()->route('admin.teachers.index')->with('success', 'Teacher added successfully.');
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->with('error', 'An error occurred while adding the teacher.');
+        }
     }
 
     /**
@@ -38,7 +64,7 @@ class TeacherController extends Controller
      */
     public function show(Teacher $teacher)
     {
-        //
+        // return view('admin.teachers.edit', compact('teacher'));
     }
 
     /**
@@ -46,7 +72,7 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        //
+        return view('admin.teachers.edit', compact('teacher'));
     }
 
     /**
@@ -54,7 +80,15 @@ class TeacherController extends Controller
      */
     public function update(Request $request, Teacher $teacher)
     {
-        //
+        $request->validate([
+            'is_active' => 'required|boolean',
+        ]);
+
+        $teacher->update([
+            'is_active' => $request->is_active,
+        ]);
+
+        return redirect()->route('admin.teachers.index')->with('success', 'Teacher updated successfully.');
     }
 
     /**
@@ -62,6 +96,30 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        //
+        DB::beginTransaction();
+        try {
+            $user = $teacher->user;
+            $user->removeRole('teacher');
+            $user->assignRole('student');
+            $teacher->delete();
+
+            DB::commit();
+            return redirect()->route('admin.teachers.index')->with('success', 'Teacher removed successfully and role changed to student.');
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->with('error', 'An error occurred while removing the teacher.');
+        }
+    }
+
+    public function searchStudents(Request $request)
+    {
+        $query = $request->input('query');
+        $students = User::role('student')
+            ->where('email', 'LIKE', "%{$query}%")
+            ->select('id', 'email')
+            ->limit(10)
+            ->get();
+
+        return response()->json($students);
     }
 }
