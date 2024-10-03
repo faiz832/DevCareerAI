@@ -26,29 +26,36 @@
                                     <th
                                         class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Status</th>
+                                    <th
+                                        class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Action</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
+                                @foreach($transactions as $index => $transaction)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm">1</div>
+                                        <div class="text-sm">{{ $index + 1 }}</div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm">John Doe</div>
+                                        <div class="text-sm">{{ $transaction->user->name }}</div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm">Fundamental of Web Developer</div>
+                                        <div class="text-sm">{{ number_format($transaction->total_amount, 0, ',', '.') }}</div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">2023-09-20</div>
+                                        <div class="text-sm text-gray-900">{{ $transaction->created_at->format('Y-m-d') }}</div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-center">
-                                        <span
-                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                            Done
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {{ $transaction->is_paid ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
+                                            {{ $transaction->is_paid ? 'Paid' : 'Unpaid' }}
                                         </span>
                                     </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-center">
+                                        <a href="{{ route('admin.subscribe_transactions.show', $transaction) }}" class="text-indigo-600 hover:text-indigo-900">View</a>
+                                    </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

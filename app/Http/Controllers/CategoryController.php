@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -26,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -34,7 +36,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255|unique:categories',
+            'icon' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $iconPath = $request->file('icon')->store('categories', 'public');
+
+        Category::create([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'icon' => $iconPath,
+        ]);
+
+        return redirect()->route('admin.categories.index')->with('success', 'Category created successfully.');
     }
 
     /**
@@ -50,7 +65,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -58,7 +73,24 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name,' . $category->id,
+            'icon' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $data = [
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+        ];
+
+        if ($request->hasFile('icon')) {
+            Storage::disk('public')->delete($category->icon);
+            $data['icon'] = $request->file('icon')->store('categories', 'public');
+        }
+
+        $category->update($data);
+
+        return redirect()->route('admin.categories.index')->with('success', 'Category updated successfully.');
     }
 
     /**
@@ -66,6 +98,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        Storage::disk('public')->delete($category->icon);
+        $category->delete();
+        return redirect()->route('admin.categories.index')->with('success', 'Category deleted successfully.');
     }
 }

@@ -54,6 +54,12 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        CauserResolver::setCauser($user);
+        activity()
+            ->performedOn($user)
+            ->withProperties(['attributes' => $user->toArray()])
+            ->log('User registered');
+
         return redirect(route('dashboard', absolute: false));
     }
 }
